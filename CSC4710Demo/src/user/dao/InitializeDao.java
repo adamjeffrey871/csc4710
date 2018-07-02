@@ -166,7 +166,7 @@ public class InitializeDao {
 		          preparedStatement.executeUpdate();
 		          
 		    //end paper initialization
-		          /*
+		          
 		          //start review initialization
 		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
 		          preparedStatement.setString(1, "1");
@@ -238,7 +238,7 @@ public class InitializeDao {
 		          preparedStatement.setString(4, "2018-03-09");
 		          preparedStatement.executeUpdate();
 		          //end review initialization
-		          */
+		          
 		          
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
