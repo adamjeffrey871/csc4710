@@ -1,0 +1,90 @@
+package user.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import user.domain.User;
+
+
+
+
+public class InitializeDao {
+	
+	
+	public void initDB() {
+		Statement statement;
+		PreparedStatement preparedStatement;
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection connect = DriverManager
+			          .getConnection("jdbc:mysql://localhost:3306/sampledb?"
+				              + "user=Adam&password=starwars6");
+			
+			// Statements allow to issue SQL queries to the database
+		      statement = connect.createStatement();
+		      statement.executeUpdate("DROP TABLE IF EXISTS papers");
+
+		      String sqlstmt = "CREATE TABLE IF NOT EXISTS papers " +
+		                   "(paperID INTEGER not NULL AUTO_INCREMENT, " +
+		                   " authorName VARCHAR(30), " + 
+		                   " authorAffiliations VARCHAR(30), " + 
+		                   " authorEmail VARCHAR(30), " + 
+		                   " title VARCHAR(30), " +
+		                   " abstract VARCHAR(500), " +
+		                   " PDFname VARCHAR(20), " +
+		                   " reviewerName VARCHAR(30), " +
+		                   " PRIMARY KEY ( paperID ))"; 
+		      statement.executeUpdate(sqlstmt);
+		      
+		      statement.executeUpdate("DROP TABLE IF EXISTS review");
+		      String sqlstmt2 = "CREATE TABLE IF NOT EXISTS review " +
+		    		  		"(reportID INTEGER not NULL AUTO_INCREMENT, " +
+		    		  		" description VARCHAR(100), " +
+		    		  		" finalRecommendation VARCHAR(6), " +
+		    		  		" subDate DATE, " +
+		    		  		" PRIMARY KEY ( reportID ))";
+		      statement.executeUpdate(sqlstmt2);
+		      
+		     
+		      preparedStatement = connect.prepareStatement("insert into  papers(paperID, authorName, authorAffiliations, authorEmail, title, abstract, PDF, reviewerName) values (?, ?, ?, ?, ?, ?, ?, ?)");
+		          preparedStatement.setString(1, "J.K. Rowling, Scholastic, jkrowling@books.com, Harry Potter 1, Book about Harry Potter in the world of wizards, harrypotter1.pdf, Chad Johnson");
+		          preparedStatement.setString(2, "Stephen King, Doubleday, stephenking@gmail.com, The Shining, The story of one family’s stay at a haunted hotel, theshining.pdf, Joe Starr");
+		          preparedStatement.setString(3, "Andrzej Sapkowski, Orbit Books, andrzejwitcher@poland.com, The Witcher, The story of a Witcher who was genetically enhanced to fight monsters, thewitcher.pdf, Ashley Burke"); 
+		          preparedStatement.setString(4, "Akira Toriyama, Weekly Shonen Jump, akiratoribot@japan.com, Dragon Ball, A boy with a tail sets off on a journey to find 7 dragon balls that can grant any wish, dragonball.pdf, Kurt Steel"); 
+		          preparedStatement.setString(5, "Robert Kirkman, Image Comics, robertkirkman@gmail.com, The Walking Dead, A man wakes up from a coma to find the world he once lived in is now overrun by zombies, twd.pdf, Jessica Jones"); 
+		          preparedStatement.setString(6, "Tom Clancy, Putnam, tomclancy@rainbowsix.com, Patriot Games, A retired CIA analyst is on vacation with his family is attacked by a group of men and he tries to figure out who it was (a sequel to The Hunt for Red October), patriotgames.pdf, Carl Lucas"); 
+		          preparedStatement.setString(7, "Suzanne Collins, Scholastic, suzannec@hotmail.com, The Hunger Games, In a dystopian world where one girl volunteers to take her sisters place after she was selected to take part in a fight for survival called the Hunger Games, hungergames.pdf, Matt Murdock"); 
+		          preparedStatement.setString(8, "George RR Martin, Bantam Spectra, georgerrmartin@westoros.com, A Game of Thrones, A brutal fantasy world where the story follows the lives of several members of noble families in their struggle to rule over all else, got.pdf, Danny Rand"); 
+		          preparedStatement.setString(9, "Bruce Campbell, St. Martin’s Press, groovybruce@evildead.com, Make Love! The Bruce Campbell Way, A satire of celebrity memoirs told as a story of a famous actor trying to do research for his role in the movie called ‘Let’s Make Love’, makelovebrucecampbell.pdf, Tony Starks"); 
+		          preparedStatement.setString(10, "RZA, Riverhead, rza@wutang.com, The Wu-Tang Manual, A guide to the Wu-Tang clan written by none other than RZA himself it contains biographies of each member and details certain things in many of their songs, thewutangmanual.pdf, Johnny Blaze"); 
+		          preparedStatement.executeUpdate();
+		    
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		}
+
+	private void prepareStatement(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+		
+}

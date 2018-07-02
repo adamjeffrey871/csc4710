@@ -1,0 +1,74 @@
+package user.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import user.domain.User;
+
+
+
+
+public class InitializeDao {
+	
+	
+	public void initDB() {
+		Statement statement;
+		//PreparedStatement preparedStatement;
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection connect = DriverManager
+			          .getConnection("jdbc:mysql://localhost:3306/sampledb?"
+				              + "user=Adam&password=starwars6");
+			
+			// Statements allow to issue SQL queries to the database
+		      statement = connect.createStatement();
+		      statement.executeUpdate("DROP TABLE IF EXISTS papers");
+
+		      String sqlstmt = "CREATE TABLE IF NOT EXISTS papers " +
+		                   "(paperID INTEGER not NULL AUTO_INCREMENT, " +
+		                   " authorName VARCHAR(30), " + 
+		                   " authorAffiliations VARCHAR(30), " + 
+		                   " authorEmail VARCHAR(30), " + 
+		                   " title VARCHAR(30), " +
+		                   " abstract VARCHAR(100), " +
+		                   " PDFname VARCHAR(20), " +
+		                   " reviewerName VARCHAR(30), " +
+		                   " PRIMARY KEY ( paperID ))"; 
+		      statement.executeUpdate(sqlstmt);
+		      /*
+		     
+		      preparedStatement = connect.prepareStatement("insert into  papers(Name, Address, Status) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Shiyong Lu");
+		          preparedStatement.setString(2, "123 Main Street, Troy, MI 48083");
+		          preparedStatement.setString(3, "Senior"); */
+		    
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		request.getRequestDispatcher("/jsps/main.jsp").forward(request, response);
+		
+		}
+
+	private void prepareStatement(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+		
+}
