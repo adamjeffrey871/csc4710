@@ -21,9 +21,6 @@ import user.service.UserException;
 import user.service.UserService;
 
 
-/**
- * Servlet implementation class UserServlet
- */
 
 public class InitializeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

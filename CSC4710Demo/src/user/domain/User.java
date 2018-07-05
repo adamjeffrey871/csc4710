@@ -14,16 +14,17 @@ public class User {
 	private String username;
 	private String password; 
 	private String email;
-	String authorName;
-	String authorAffiliation;
-	String authorEmail;
-	String title;
-	String paperAbstract;
-	String PDFfile;
-	String reviewerName;
-	String reviewerID;
-	String deletePaperID;
-	String paperID;
+	String authorName = null;
+	String authorAffiliation = null;
+	String authorEmail = null;
+	String title = null;
+	String paperAbstract = null;
+	String PDFfile = null;
+	String reviewerName = null;
+	String reviewerID = null;
+	String deletePaperID = null;
+	String paperID = null;
+	String reportID = null;
 	
 
 	
@@ -51,49 +52,100 @@ public class User {
 		this.email = email;
 	}
 	
-	public void setAuthorName(String name)
-	{
-		this.authorName = name;
+	public void setAuthorName(String name) {
+		if (name = "")
+		{
+			this.authorName = name;
+		}
+		
 	}
 	
-	public void setAuthorAffiliation(String affiliation)
-	{
+	public String getAuthorName() {
+		return authorName;
+	}
+	
+	public void setAuthorAffiliation(String affiliation) {
+		System.out.println("The value of affiliation is: " + affiliation);
 		this.authorAffiliation = affiliation;
 	}
 	
-	public void setAuthorEmail(String email)
-	{
+	public String getAuthorAffiliation() {
+		return authorAffiliation;
+	}
+	
+	public void setAuthorEmail(String email) {
 		this.authorEmail = email;
 	}
 	
-	public void setTitle(String paperTitle)
-	{
+	public String getAuthorEmail() {
+		return authorEmail;
+	}
+	
+	public void setTitle(String paperTitle) {
 		this.title = paperTitle;
+	}
+	
+	public String getTitle() {
+		return title;
 	}
 	
 	public void setAbstract(String theAbstract) {
 		this.paperAbstract = theAbstract;
 	}
 	
+	public String getAbstract() {
+		return paperAbstract;
+	}
+	
 	public void setPDF(String pdf) {
 		this.PDFfile = pdf;
+	}
+	
+	public String getPDF() {
+		return PDFfile;
 	}
 	
 	public void setReviewerName(String name) {
 		this.reviewerName = name;
 	}
 	
+	public String getReviewerName() {
+		return reviewerName;
+	}
+	
 	public void setReviewerID(String ID) {
 		this.reviewerID = ID;
+	}
+	
+	public String getReviewerID() {
+		return reviewerID;
 	}
 	
 	public void setDeletePaperID(String ID) {
 		this.deletePaperID = ID;
 	}
 	
+	public String getDeletePaperID() {
+		return deletePaperID;
+	}
+	
 	public void setPaperID(String ID) {
 		this.paperID = ID;
 	}
+	
+	public String getPaperID() {
+		return paperID;
+	}
+	
+	public void setReportID(String ID) {
+		this.reportID = ID;
+	}
+	
+	public String getReportID() {
+		return reportID;
+	}
+	
+	
 
 	
 	@Override

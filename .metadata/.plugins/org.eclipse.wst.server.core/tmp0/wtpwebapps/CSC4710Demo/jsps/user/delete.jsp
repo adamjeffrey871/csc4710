@@ -26,8 +26,8 @@
 
 
 <p style="color: red; font-weight: 900"> ${msg}</p>
-<form action="<c:url value='/InsertServlet'/>" method="post">
-	<input type="hidden" name="method" value="regist"/>
+<form action="<c:url value='/DeleteServlet'/>" method="post">
+	<input type="hidden" name="method" value="delete"/>
 	Paper ID:<input type="text" name="paperID" value="${form.paperID }"/>
 	<span style="color: red; font-weight: 900">${errors.paperID }</span>
 	<br/>

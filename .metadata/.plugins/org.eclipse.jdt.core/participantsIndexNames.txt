@@ -1,6 +1,8 @@
 INDEX VERSION 1.130
 C:\Users\Keith\Desktop\Programming\CSC 4710\Homework 4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\726265704.index
 \CSC4710Demo\src
+C:\Users\Keith\Desktop\Programming\CSC 4710\Project\Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\686851622.index
+\CSC4710Demo\src
 C:\Users\Keith\Desktop\Programming\CSC 4710\Homework 4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\686851622.index
 \CSC4710Demo\src
 C:\Users\Keith\Desktop\Programming\CSC 4710\Homework 4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\916622802.index

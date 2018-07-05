@@ -26,7 +26,7 @@
 
 
 <p style="color: red; font-weight: 900"> ${msg}</p>
-<form action="<c:url value='/InsertServlet'/>" method="post">
+<form action="<c:url value='/UpdateServlet'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	Author Name:<input type="text" name="authorName" value="${form.authorName }"/>
 	<span style="color: red; font-weight: 900">${errors.authorName }</span>
@@ -49,7 +49,10 @@
 	Reviewer Name：<input type="text" name="reviewerName" value="${form.reviewerName }"/>
 	<span style="color: red; font-weight: 900">${errors.reviewerName }</span>
 	<br/>
-	Paper ID：<input type="text" name="reviewerID" value="${form.paperID }"/>
+	Report ID：<input type="text" name="reportID" value="${form.reportID }"/>
+	<span style="color: red; font-weight: 900">${errors.reportID }</span>
+	<br/>
+	Paper ID:<input type="text" name="paperID" value="${form.paperID }"/>
 	<span style="color: red; font-weight: 900">${errors.paperID }</span>
 	<br/>
 	<input type="submit" value="Update"/>

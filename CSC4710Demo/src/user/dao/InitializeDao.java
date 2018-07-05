@@ -239,6 +239,8 @@ public class InitializeDao {
 		          preparedStatement.executeUpdate();
 		          //end review initialization
 		          
+		          System.out.println("Database Initialized");
+		          
 		          
 		} catch(SQLException e) {
 			throw new RuntimeException(e);

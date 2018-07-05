@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import user.dao.DeleteDao;
 import user.dao.UserDao;
 import user.domain.User;
 import user.service.UserException;
@@ -43,7 +44,7 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		String paperID;
 		
 		//Map<String, String> form = new HashMap<String,String>();
 		UserService userservice = new UserService();
@@ -58,21 +59,13 @@ public class DeleteServlet extends HttpServlet {
 			System.out.println(name + ": " + Arrays.toString(values));
 		}
 		form.setDeletePaperID(info.get(1));
+		paperID = form.getDeletePaperID();
 		
-		try {
-			userservice.regist(form);
-			
-			response.sendRedirect( request.getContextPath() + "/jsps/main.jsp");
-		} catch (ClassNotFoundException | UserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		System.out.println("All rows containing the ID: " + paperID + " will be deleted.");
+		
+		DeleteDao newobj = new DeleteDao();
+		newobj.deleteManager(paperID);
+		response.sendRedirect( request.getContextPath() + "/jsps/user/delete.jsp"); 
 		
 	}
 

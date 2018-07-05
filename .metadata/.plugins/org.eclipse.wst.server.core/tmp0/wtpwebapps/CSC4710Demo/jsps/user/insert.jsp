@@ -49,8 +49,8 @@
 	Reviewer Name：<input type="text" name="reviewerName" value="${form.reviewerName }"/>
 	<span style="color: red; font-weight: 900">${errors.reviewerName }</span>
 	<br/>
-	Paper ID：<input type="text" name="paperID" value="${form.paperID }"/>
-	<span style="color: red; font-weight: 900">${errors.paperID }</span>
+	Report ID：<input type="text" name="reportID" value="${form.reportID }"/>
+	<span style="color: red; font-weight: 900">${errors.reportID }</span>
 	<br/>
 	<input type="submit" value="Insert"/>
 </form>

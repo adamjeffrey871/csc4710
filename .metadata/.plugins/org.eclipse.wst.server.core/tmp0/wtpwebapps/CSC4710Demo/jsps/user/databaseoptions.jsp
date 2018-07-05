@@ -22,7 +22,6 @@
   
   <body>
   <h1>Database Options</h1>
-  <a href="<c:url value='/jsps/user/insert.jsp'/>" target="_parent">Insert</a>
 
 
 <p style="color: red; font-weight: 900"> ${msg}</p>
@@ -31,9 +30,15 @@
 	<input type="submit" value="Initialize Database"/>
 	
 </form>
+<h3>Add Reviewers</h3>
 <form action="<c:url value='/AssignReviewersServlet'/>" method="post">
-	
-	<input type="submit" value="Assign Reviewers"/>
+	Paper ID     :<input type="text" name="paperID" value="${form.paperID }"/>
+	<span style="color: red; font-weight: 900">${errors.paperID }</span>
+	<br/>
+	Reviewer Name：<input type="text" name="reviewerName" value="${form.reviewerName }"/>
+	<span style="color: red; font-weight: 900">${errors.reviewerName }</span>
+	<br/>
+	<input type="submit" value="Assign Reviewer"/>
 	
 </form>
   </body>

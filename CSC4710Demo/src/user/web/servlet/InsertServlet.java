@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import user.dao.InsertDao;
 import user.dao.UserDao;
 import user.domain.User;
 import user.service.UserException;
@@ -43,6 +44,8 @@ public class InsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID;
+		
 		
 		
 		//Map<String, String> form = new HashMap<String,String>();
@@ -64,22 +67,21 @@ public class InsertServlet extends HttpServlet {
 		form.setAbstract(info.get(5));
 		form.setPDF(info.get(6));
 		form.setReviewerName(info.get(7));
-		form.setPaperID(info.get(8));
+		form.setReportID(info.get(8));
 		
-		try {
-			userservice.regist(form);
-			
-			response.sendRedirect( request.getContextPath() + "/jsps/main.jsp");
-		} catch (ClassNotFoundException | UserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		authorName = form.getAuthorName();
+		authorAffiliation = form.getAuthorAffiliation();
+		authorEmail = form.getAuthorEmail();
+		title = form.getTitle();
+		paperAbstract = form.getAbstract();
+		PDFfile = form.getPDF();
+		reviewerName = form.getReviewerName();
+		reportID = form.getReportID();
+		
+		//insert code here
+		InsertDao newObj = new InsertDao();
+		newObj.insertManager(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID);
+		response.sendRedirect( request.getContextPath() + "/jsps/user/insert.jsp"); 
 		
 	}
 
