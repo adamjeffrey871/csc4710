@@ -52,10 +52,19 @@ public class User {
 		this.email = email;
 	}
 	
+	/*
+	 * For a lot of these I had to add if statments for the update functionality
+	 * The if statements check if the items respective form was empty or not
+	 * If it is empty it does not update the items and the items remain null
+	 * This was done so the user could update select items instead of every item
+	 */
 	public void setAuthorName(String name) {
-		if (name = "")
+		if (!name.isEmpty())
 		{
 			this.authorName = name;
+		}
+		else {
+			System.out.println("Author Name Skipped nothing entered");
 		}
 		
 	}
@@ -65,8 +74,13 @@ public class User {
 	}
 	
 	public void setAuthorAffiliation(String affiliation) {
-		System.out.println("The value of affiliation is: " + affiliation);
-		this.authorAffiliation = affiliation;
+		if (!affiliation.isEmpty())
+		{
+			this.authorAffiliation = affiliation;
+		}
+		else {
+			System.out.println("Author Affiliation Skipped nothing entered");
+		}
 	}
 	
 	public String getAuthorAffiliation() {
@@ -74,7 +88,13 @@ public class User {
 	}
 	
 	public void setAuthorEmail(String email) {
-		this.authorEmail = email;
+		if (!email.isEmpty())
+		{
+			this.authorEmail = email;
+		}
+		else {
+			System.out.println("Author Email Skipped nothing entered");
+		}
 	}
 	
 	public String getAuthorEmail() {
@@ -82,7 +102,13 @@ public class User {
 	}
 	
 	public void setTitle(String paperTitle) {
-		this.title = paperTitle;
+		if (!paperTitle.isEmpty())
+		{
+			this.title = paperTitle;
+		}
+		else {
+			System.out.println("Title Skipped nothing entered");
+		}
 	}
 	
 	public String getTitle() {
@@ -90,7 +116,13 @@ public class User {
 	}
 	
 	public void setAbstract(String theAbstract) {
-		this.paperAbstract = theAbstract;
+		if (!theAbstract.isEmpty())
+		{
+			this.paperAbstract = theAbstract;
+		}
+		else {
+			System.out.println("Abstract Skipped nothing entered");
+		}
 	}
 	
 	public String getAbstract() {
@@ -98,7 +130,13 @@ public class User {
 	}
 	
 	public void setPDF(String pdf) {
-		this.PDFfile = pdf;
+		if (!pdf.isEmpty())
+		{
+			this.PDFfile = pdf;
+		}
+		else {
+			System.out.println("PDF File Skipped nothing entered");
+		}
 	}
 	
 	public String getPDF() {
@@ -106,13 +144,19 @@ public class User {
 	}
 	
 	public void setReviewerName(String name) {
-		this.reviewerName = name;
+		if (!name.isEmpty())
+		{
+			this.reviewerName = name;
+		}
+		else {
+			System.out.println("Reviewer Name Skipped nothing entered");
+		}
 	}
 	
 	public String getReviewerName() {
 		return reviewerName;
 	}
-	
+	/*
 	public void setReviewerID(String ID) {
 		this.reviewerID = ID;
 	}
@@ -120,7 +164,7 @@ public class User {
 	public String getReviewerID() {
 		return reviewerID;
 	}
-	
+	*/
 	public void setDeletePaperID(String ID) {
 		this.deletePaperID = ID;
 	}
@@ -130,7 +174,13 @@ public class User {
 	}
 	
 	public void setPaperID(String ID) {
-		this.paperID = ID;
+		if (!ID.isEmpty())
+		{
+			this.paperID = ID;
+		}
+		else {
+			System.out.println("Paper ID Skipped nothing entered");
+		}
 	}
 	
 	public String getPaperID() {
@@ -138,7 +188,13 @@ public class User {
 	}
 	
 	public void setReportID(String ID) {
-		this.reportID = ID;
+		if (!ID.isEmpty())
+		{
+			this.reportID = ID;
+		}
+		else {
+			System.out.println("Skipped nothing entered");
+		}
 	}
 	
 	public String getReportID() {
