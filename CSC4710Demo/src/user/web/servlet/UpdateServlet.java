@@ -80,7 +80,7 @@ public class UpdateServlet extends HttpServlet {
 		
 		UpdateDao newobj = new UpdateDao();
 		newobj.updateManager(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID, paperID);			
-		response.sendRedirect( request.getContextPath() + "/jsps/papers.jsp"); 
+		response.sendRedirect( request.getContextPath() + "/jsps/papersAfterBody.jsp"); 
 		
 	}
 

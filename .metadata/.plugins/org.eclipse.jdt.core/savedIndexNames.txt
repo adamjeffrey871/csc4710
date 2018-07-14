@@ -9,7 +9,6 @@ INDEX VERSION 1.130+C:\Users\Keith\Desktop\Programming\CSC 4710\Project\Project\
 197366972.index
 2043626465.index
 3341582331.index
-2040149542.index
 3273689814.index
 2569137926.index
 3869433674.index
@@ -18,7 +17,6 @@ INDEX VERSION 1.130+C:\Users\Keith\Desktop\Programming\CSC 4710\Project\Project\
 1177904427.index
 2088728460.index
 62376872.index
-3980569042.index
 4214512686.index
 2872033403.index
 3992889248.index

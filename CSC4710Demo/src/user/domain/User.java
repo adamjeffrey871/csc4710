@@ -25,6 +25,10 @@ public class User {
 	String deletePaperID = null;
 	String paperID = null;
 	String reportID = null;
+	String description = null;
+	String finalRecommendation = null;
+	String submissionDate = null;
+	String memberID = null;
 	
 
 	
@@ -200,7 +204,62 @@ public class User {
 	public String getReportID() {
 		return reportID;
 	}
+
+	public void setDescription(String desc) {
+		if (!desc.isEmpty())
+		{
+			this.description = desc;
+		}
+		else {
+			System.out.println("Skipped, nothing entered");
+		}
+	}
 	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setFinalRecommendation(String rec) {
+		if (!rec.isEmpty())
+		{
+			this.finalRecommendation = rec;
+		}
+		else
+		{
+			System.out.println("Skipped, nothing entered");
+		}
+	}
+	
+	public String getFinalRecommendation() {
+		return finalRecommendation;
+	}
+	
+	public void setSubmissionDate(String date) {
+		if(date.isEmpty()) {
+			this.submissionDate = date;
+		}
+		else
+		{
+			System.out.println("Skipped, nothing entered");
+		}
+	}
+	
+	public String getSubmissionDate() {
+		return submissionDate;
+	}
+	
+	public void setMemberID(String ID) {
+		if(!ID.isEmpty()) {
+			this.memberID = ID;
+		}
+		else
+			System.out.println("Skipped, nothing entered");
+	}
+	
+	public String getMemberID()
+	{
+		return memberID;
+	}
 	
 
 	
