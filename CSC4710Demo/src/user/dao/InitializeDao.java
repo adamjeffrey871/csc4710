@@ -45,14 +45,23 @@ public class InitializeDao {
 		                   " PRIMARY KEY ( paperID ))"; 
 		      statement.executeUpdate(sqlstmt);
 		      
-		      statement.executeUpdate("DROP TABLE IF EXISTS review");
-		      String sqlstmt2 = "CREATE TABLE IF NOT EXISTS review " +
+		      statement.executeUpdate("DROP TABLE IF EXISTS reviews");
+		      String sqlstmt2 = "CREATE TABLE IF NOT EXISTS reviews " +
 		    		  		"(reportID INTEGER not NULL AUTO_INCREMENT, " +
 		    		  		" description VARCHAR(500), " +
 		    		  		" finalRecommendation VARCHAR(6), " +
 		    		  		" subDate DATE, " +
+		    		  		" memberID INTEGER, " + 
 		    		  		" PRIMARY KEY ( reportID ))";
 		      statement.executeUpdate(sqlstmt2);
+		      
+		      statement.executeUpdate("DROP TABLE IF EXISTS members");
+		      String sqlstmt3 = "CREATE TABLE IF NOT EXISTS members " +
+		    		  		"(memberID INTEGER not NULL AUTO_INCREMENT, " +
+		    		  		" memberName VARCHAR(50), " +
+		    		  		" reportID INTEGER, " +
+		    		  		" PRIMARY KEY ( memberID ))";
+		      statement.executeUpdate(sqlstmt3);
 		      
 		     //start initialize 10 tuples for paper
 		      preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname, reviewerName, reportID) values (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -168,76 +177,129 @@ public class InitializeDao {
 		    //end paper initialization
 		          
 		          //start review initialization
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");
 		          preparedStatement.setString(1, "1");
 		          preparedStatement.setString(2, "Very thrilling story, movie with Harrison Ford not too bad either");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-07-01");
+		          preparedStatement.setString(5,  "6");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "2");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "2");
 		          preparedStatement.setString(2, "Very grusome and heartbreaking, just when things look to be going good you find out everything is wrong");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-06-14");
+		          preparedStatement.setString(5,  "8");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "3");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "3");
 		          preparedStatement.setString(2, "Very good artstyle, very fun story, very loveable characters");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-02-24");
+		          preparedStatement.setString(5,  "4");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "4");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "4");
 		          preparedStatement.setString(2, "Has nothing to appeal to anyone who isn't a fan of the Wu Tang");
 		          preparedStatement.setString(3, "reject");
 		          preparedStatement.setString(4, "2018-01-06");
+		          preparedStatement.setString(5,  "10");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "5");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "5");
 		          preparedStatement.setString(2, "Very scary pshychological thriller");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-04-22");
+		          preparedStatement.setString(5,  "2");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "6");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "6");
 		          preparedStatement.setString(2, "The story stops trying to do anything new after a while");
 		          preparedStatement.setString(3, "reject");
 		          preparedStatement.setString(4, "2018-03-11");
+		          preparedStatement.setString(5,  "5");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "7");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "7");
 		          preparedStatement.setString(2, "Could be a tad more brutal with its concept but good nonetheless");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-01-16");
+		          preparedStatement.setString(5,  "7");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "8");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "8");
 		          preparedStatement.setString(2, "Excellent fantasy world that has its own system of doing things");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-06-07");
+		          preparedStatement.setString(5,  "3");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "9");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "9");
 		          preparedStatement.setString(2, "Bruce should stick to movies and tv");
 		          preparedStatement.setString(3, "reject");
 		          preparedStatement.setString(4, "2018-05-28");
+		          preparedStatement.setString(5,  "9");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  review(reportID, description, finalRecommendation, subDate) values (?, ?, ?, ?)");
-		          preparedStatement.setString(1, "10");
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID) values (?, ?, ?, ?, ?)");		          preparedStatement.setString(1, "10");
 		          preparedStatement.setString(2, "Builds a beautiful world of magic and wizardry");
 		          preparedStatement.setString(3, "accept");
 		          preparedStatement.setString(4, "2018-03-09");
+		          preparedStatement.setString(5,  "1");
 		          preparedStatement.executeUpdate();
 		          //end review initialization
+		          
+		          //start PC member initialization
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Chad Johnson");
+		          preparedStatement.setString(2, "10");
+		          preparedStatement.executeUpdate(); 
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Joe Starr");
+		          preparedStatement.setString(2, "5");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Ashley Burke");
+		          preparedStatement.setString(2, "8");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Kurt Steel");
+		          preparedStatement.setString(2, "3");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Jessica Jones");
+		          preparedStatement.setString(2, "6");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Carl Lucas");
+		          preparedStatement.setString(2, "1");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Matt Murdock");
+		          preparedStatement.setString(2, "7");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Danny Rand");
+		          preparedStatement.setString(2, "8");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Tony Starks");
+		          preparedStatement.setString(2, "9");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  members(memberName, reportID) values (?, ?)");
+		          preparedStatement.setString(1, "Johnny Blaze");
+		          preparedStatement.setString(2, "4");
+		          preparedStatement.executeUpdate();
 		          
 		          System.out.println("Database Initialized");
 		          
