@@ -81,7 +81,7 @@ public class InsertServlet extends HttpServlet {
 		//insert code here
 		InsertDao newObj = new InsertDao();
 		newObj.insertManager(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID);
-		response.sendRedirect( request.getContextPath() + "/jsps/user/insert.jsp"); 
+		response.sendRedirect( request.getContextPath() + "/jsps/papers.jsp"); 
 		
 	}
 

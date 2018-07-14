@@ -43,9 +43,9 @@
 		<c:otherwise>
 			Hello：${sessionScope.session_user.username };
 			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query Result</a>&nbsp;
-			<a href="<c:url value='/jsps/user/insert.jsp'/>" target="body">Insert into Paper Database</a>&nbsp;
-			<a href="<c:url value='/jsps/user/delete.jsp'/>" target="body">Delete from Paper Database</a>&nbsp;
-			<a href="<c:url value='/jsps/user/update.jsp'/>" target="body">Update Paper Database</a>
+			<a href="<c:url value='/jsps/papers.jsp'/>" target="_parent">Insert/Update/Delete Papers</a>&nbsp;
+			<a href="<c:url value='/jsps/user/delete.jsp'/>" target="_parent">Insert/Update/Delete PC Members</a>&nbsp;
+			<a href="<c:url value='/jsps/user/update.jsp'/>" target="_parent">Insert/Update/Delete Reviews</a>
 		</c:otherwise>
 	</c:choose>
 

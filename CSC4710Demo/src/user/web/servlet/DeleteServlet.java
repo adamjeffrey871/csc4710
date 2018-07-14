@@ -65,7 +65,7 @@ public class DeleteServlet extends HttpServlet {
 		
 		DeleteDao newobj = new DeleteDao();
 		newobj.deleteManager(paperID);
-		response.sendRedirect( request.getContextPath() + "/jsps/user/delete.jsp"); 
+		response.sendRedirect( request.getContextPath() + "/jsps/papers.jsp"); 
 		
 	}
 
