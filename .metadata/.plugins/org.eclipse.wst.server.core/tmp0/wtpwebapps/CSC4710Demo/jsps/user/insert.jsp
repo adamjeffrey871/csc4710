@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Insert into Paper Database</title>
+    <title>Insert into Paper Table</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

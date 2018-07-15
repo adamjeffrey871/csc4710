@@ -3,22 +3,16 @@ package user.web.servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.jws.WebService;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import user.dao.UpdateDao;
-import user.dao.UserDao;
 import user.domain.User;
-import user.service.UserException;
-import user.service.UserService;
 
 
 public class UpdateServlet extends HttpServlet {
@@ -47,7 +41,6 @@ public class UpdateServlet extends HttpServlet {
 		String authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID, paperID;
 		
 		//Map<String, String> form = new HashMap<String,String>();
-		UserService userservice = new UserService();
 		Map<String,String[]> paramMap = request.getParameterMap();
 		User form = new User();
 		List<String> info = new ArrayList<String>();

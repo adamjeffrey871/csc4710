@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete from Paper Database</title>
+    <title>Delete from Paper Table</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

@@ -3,14 +3,8 @@ package user.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-
-import user.domain.User;
 
 
 
@@ -318,10 +312,5 @@ public class InitializeDao {
 		}
 		
 		}
-
-	private void prepareStatement(String string) {
-		// TODO Auto-generated method stub
-		
-	}
 		
 }
