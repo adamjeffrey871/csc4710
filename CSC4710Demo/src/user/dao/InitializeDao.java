@@ -50,7 +50,7 @@ public class InitializeDao {
 		    		  		"(reportID INTEGER not NULL AUTO_INCREMENT, " +
 		    		  		" description VARCHAR(500), " +
 		    		  		" finalRecommendation VARCHAR(6), " +
-		    		  		" subDate DATE, " +
+		    		  		" subDate VARCHAR(10), " +
 		    		  		" memberID INTEGER, " + 
 		    		  		" PRIMARY KEY ( reportID ))";
 		      statement.executeUpdate(sqlstmt2);

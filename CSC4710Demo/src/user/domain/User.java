@@ -27,7 +27,7 @@ public class User {
 	String reportID = null;
 	String description = null;
 	String finalRecommendation = null;
-	String submissionDate = null;
+	String subDate = null;
 	String memberID = null;
 	String reviewID = null;
 	
@@ -202,7 +202,7 @@ public class User {
 			this.reportID = ID;
 		}
 		else {
-			System.out.println("Report Ikipped nothing entered");
+			System.out.println("Report ID skipped nothing entered");
 		}
 	}
 	
@@ -216,7 +216,7 @@ public class User {
 			this.description = desc;
 		}
 		else {
-			System.out.println("Skipped, nothing entered");
+			System.out.println("Description skipped, nothing entered");
 		}
 	}
 	
@@ -231,7 +231,7 @@ public class User {
 		}
 		else
 		{
-			System.out.println("Skipped, nothing entered");
+			System.out.println("Final Recommendation skipped, nothing entered");
 		}
 	}
 	
@@ -240,17 +240,17 @@ public class User {
 	}
 	
 	public void setSubmissionDate(String date) {
-		if(date.isEmpty()) {
-			this.submissionDate = date;
+		if(!date.isEmpty()) {
+			this.subDate = date;
 		}
 		else
 		{
-			System.out.println("Skipped, nothing entered");
+			System.out.println("Submission Date skipped, nothing entered");
 		}
 	}
 	
 	public String getSubmissionDate() {
-		return submissionDate;
+		return subDate;
 	}
 	
 	public void setMemberID(String ID) {
@@ -258,7 +258,7 @@ public class User {
 			this.memberID = ID;
 		}
 		else
-			System.out.println("Skipped, nothing entered");
+			System.out.println("Member ID skipped, nothing entered");
 	}
 	
 	public String getMemberID()
