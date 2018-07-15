@@ -14,6 +14,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>DeleteReviewServlet</display-name>
+    <servlet-name>DeleteReviewServlet</servlet-name>
+    <servlet-class>user.web.servlet.DeleteReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteReviewServlet</servlet-name>
+    <url-pattern>/DeleteReviewServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>InsertReviewServlet</display-name>
     <servlet-name>InsertReviewServlet</servlet-name>
     <servlet-class>user.web.servlet.InsertReviewServlet</servlet-class>

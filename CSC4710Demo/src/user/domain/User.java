@@ -29,6 +29,7 @@ public class User {
 	String finalRecommendation = null;
 	String submissionDate = null;
 	String memberID = null;
+	String reviewID = null;
 	
 
 	
@@ -160,15 +161,19 @@ public class User {
 	public String getReviewerName() {
 		return reviewerName;
 	}
-	/*
-	public void setReviewerID(String ID) {
-		this.reviewerID = ID;
+	
+	public void setReviewID(String ID) {		//also report ID, if i can do refactoring i gotta make them one element
+		if(!ID.isEmpty()) {
+			this.reviewID = ID;
+		}
+		else
+			System.out.println("Review ID skipped nothing entered");
 	}
 	
-	public String getReviewerID() {
-		return reviewerID;
+	public String getReviewID() {
+		return reviewID;
 	}
-	*/
+	
 	public void setDeletePaperID(String ID) {
 		this.deletePaperID = ID;
 	}
@@ -197,7 +202,7 @@ public class User {
 			this.reportID = ID;
 		}
 		else {
-			System.out.println("Skipped nothing entered");
+			System.out.println("Report Ikipped nothing entered");
 		}
 	}
 	

@@ -64,7 +64,7 @@ public class DeleteServlet extends HttpServlet {
 		System.out.println("All rows containing the ID: " + paperID + " will be deleted.");
 		
 		DeleteDao newobj = new DeleteDao();
-		newobj.deleteManager(paperID);
+		newobj.delete(paperID);
 		response.sendRedirect( request.getContextPath() + "/jsps/papersAfterBody.jsp"); 
 		
 	}
