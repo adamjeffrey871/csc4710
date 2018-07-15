@@ -5,4 +5,8 @@
 <fullyQualifiedTypeName name="user.dao.InsertDao"/>
 <fullyQualifiedTypeName name="user.dao.DeleteDao"/>
 <fullyQualifiedTypeName name="user.dao.UpdateDao"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="user.dao.InsertReviewDao"/>
+<fullyQualifiedTypeName name="user.dao.DeleteReviewDao"/>
+<fullyQualifiedTypeName name="user.dao.UpdateReviewDao"/>
 </qualifiedTypeNameHistroy>

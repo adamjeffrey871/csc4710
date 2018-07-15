@@ -30,6 +30,7 @@ public class User {
 	String subDate = null;
 	String memberID = null;
 	String reviewID = null;
+	String memberName = null;
 	
 
 	
@@ -264,6 +265,17 @@ public class User {
 	public String getMemberID()
 	{
 		return memberID;
+	}
+	
+	public void setMemberName(String name) {
+		if (!name.isEmpty())
+			this.memberName = name;
+		else
+			System.out.println("Member name skipped, nothing entered");
+	}
+	
+	public String getMemberName() {
+		return memberName;
 	}
 	
 

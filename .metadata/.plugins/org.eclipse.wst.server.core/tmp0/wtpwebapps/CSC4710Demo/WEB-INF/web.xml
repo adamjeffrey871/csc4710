@@ -14,6 +14,36 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>InsertMemberServlet</display-name>
+    <servlet-name>InsertMemberServlet</servlet-name>
+    <servlet-class>user.web.servlet.InsertMemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertMemberServlet</servlet-name>
+    <url-pattern>/InsertMemberServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateMemberServlet</display-name>
+    <servlet-name>UpdateMemberServlet</servlet-name>
+    <servlet-class>user.web.servlet.UpdateMemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateMemberServlet</servlet-name>
+    <url-pattern>/UpdateMemberServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteMemberServlet</display-name>
+    <servlet-name>DeleteMemberServlet</servlet-name>
+    <servlet-class>user.web.servlet.DeleteMemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteMemberServlet</servlet-name>
+    <url-pattern>/DeleteMemberServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>UpdateReviewServlet</display-name>
     <servlet-name>UpdateReviewServlet</servlet-name>
     <servlet-class>user.web.servlet.UpdateReviewServlet</servlet-class>
