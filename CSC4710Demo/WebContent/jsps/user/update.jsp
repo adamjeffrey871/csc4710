@@ -46,12 +46,6 @@
 	PDF File：<input type="text" name="pdfName" value="${form.pdfName }"/>
 	<span style="color: red; font-weight: 900">${errors.pdfName }</span>
 	<br/>
-	Reviewer Name：<input type="text" name="reviewerName" value="${form.reviewerName }"/>
-	<span style="color: red; font-weight: 900">${errors.reviewerName }</span>
-	<br/>
-	Report ID：<input type="text" name="reportID" value="${form.reportID }"/>
-	<span style="color: red; font-weight: 900">${errors.reportID }</span>
-	<br/>
 	Paper ID:<input type="text" name="paperID" value="${form.paperID }"/>
 	<span style="color: red; font-weight: 900">${errors.paperID }</span>
 	<br/>

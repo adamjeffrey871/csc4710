@@ -38,7 +38,7 @@ public class UpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID, paperID;
+		String authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, paperID;
 		
 		//Map<String, String> form = new HashMap<String,String>();
 		Map<String,String[]> paramMap = request.getParameterMap();
@@ -57,9 +57,7 @@ public class UpdateServlet extends HttpServlet {
 		form.setTitle(info.get(4));
 		form.setAbstract(info.get(5));
 		form.setPDF(info.get(6));
-		form.setReviewerName(info.get(7));
-		form.setReportID(info.get(8));
-		form.setPaperID(info.get(9));
+		form.setPaperID(info.get(7));
 		
 		authorName = form.getAuthorName();
 		authorAffiliation = form.getAuthorAffiliation();
@@ -67,12 +65,10 @@ public class UpdateServlet extends HttpServlet {
 		title = form.getTitle();
 		paperAbstract = form.getAbstract();
 		PDFfile = form.getPDF();
-		reviewerName = form.getReviewerName();
-		reportID = form.getReportID();
 		paperID = form.getPaperID();
 		
 		UpdateDao newobj = new UpdateDao();
-		newobj.updateManager(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, reviewerName, reportID, paperID);			
+		newobj.updateManager(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, paperID);			
 		response.sendRedirect( request.getContextPath() + "/jsps/papersAfterBody.jsp"); 
 		
 	}

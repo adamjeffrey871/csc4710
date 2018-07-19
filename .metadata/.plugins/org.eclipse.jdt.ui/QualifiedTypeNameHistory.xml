@@ -9,4 +9,8 @@
 <fullyQualifiedTypeName name="user.dao.InsertReviewDao"/>
 <fullyQualifiedTypeName name="user.dao.DeleteReviewDao"/>
 <fullyQualifiedTypeName name="user.dao.UpdateReviewDao"/>
+<fullyQualifiedTypeName name="user.dao.InsertMemberDao"/>
+<fullyQualifiedTypeName name="user.dao.DeleteMemberDao"/>
+<fullyQualifiedTypeName name="user.dao.UpdateMemberDao"/>
+<fullyQualifiedTypeName name="user.dao.ListSingleAuthorDao"/>
 </qualifiedTypeNameHistroy>

@@ -12,6 +12,16 @@
     <servlet-name>InitializeServlet</servlet-name>
     <url-pattern>/InitializeServlet</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>ListSingleAuthorServlet</display-name>
+    <servlet-name>ListSingleAuthorServlet</servlet-name>
+    <servlet-class>user.web.servlet.ListSingleAuthorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListSingleAuthorServlet</servlet-name>
+    <url-pattern>/ListSingleAuthorServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>InsertMemberServlet</display-name>
