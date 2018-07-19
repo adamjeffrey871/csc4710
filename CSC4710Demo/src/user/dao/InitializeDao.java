@@ -28,9 +28,6 @@ public class InitializeDao {
 
 		      String sqlstmt = "CREATE TABLE IF NOT EXISTS papers " +
 		                   "(paperID INTEGER not NULL AUTO_INCREMENT, " +
-		                   " authorName VARCHAR(30), " + 
-		                   " authorAffiliations VARCHAR(30), " + 
-		                   " authorEmail VARCHAR(30), " + 
 		                   " title VARCHAR(30), " +
 		                   " abstract VARCHAR(500), " +
 		                   " PDFname VARCHAR(20), " +
@@ -55,113 +52,98 @@ public class InitializeDao {
 		    		  		" PRIMARY KEY ( memberID ))";
 		      statement.executeUpdate(sqlstmt3);
 		      
+		      statement.executeUpdate("DROP TABLE IF EXISTS authors");
+		      String sqlstmt4 = "CREATE TABLE IF NOT EXISTS authors " +
+		    		  		"(authorID INTEGER not NULL AUTO_INCREMENT, " +
+		    		  		" authorName VARCHAR(50), " +
+		    		  		" authorEmail VARCHAR(60), " +
+		    		  		" authorAffiliation VARCHAR(50), " +
+		    		  		" PRIMARY KEY ( authorID ))";
+		      statement.executeUpdate(sqlstmt4);
+		      
+		      statement.executeUpdate("DROP TABLE IF EXISTS authorList");
+		      String sqlstmt5 = "CREATE TABLE IF NOT EXISTS authorList " +
+		    		  		"(paperID INTEGER not NULL AUTO_INCREMENT, " +
+		    		  		" firstAuthorName VARCHAR(50), " +
+		    		  		" secondAuthorName VARCHAR(50), " +
+		    		  		" firstAuthorID INTEGER, " +
+		    		  		" secondAuthorID INTEGER, " +
+		    		  		" PRIMARY KEY ( paperID ))";
+		      statement.executeUpdate(sqlstmt5);
+		      
+		      
+		      
 		     //start initialize 10 tuples for paper
-		      	  preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");
-		          preparedStatement.setString(1,  "J.K. Rowling");
-		          preparedStatement.setString(2, "Scholastic");
-		          preparedStatement.setString(3, "jkrowling@books.com");
-		          preparedStatement.setString(4,  "Harry Potter 1");
-		          preparedStatement.setString(5,  "Book about Harry Potter in the world of wizards");
-		          preparedStatement.setString(6,  "harrypotter1.pdf");
+		      	  preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1,  "Harry Potter 1");
+		          preparedStatement.setString(2,  "Book about Harry Potter in the world of wizards");
+		          preparedStatement.setString(3,  "harrypotter1.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");		         
-		          preparedStatement.setString(1,  "Stephen King");
-		          preparedStatement.setString(2, "Doubleday");
-		          preparedStatement.setString(3, "stephenking@gmail.com");
-		          preparedStatement.setString(4,  "The Shining");
-		          preparedStatement.setString(5,  "The story of one family’s stay at a haunted hotel");
-		          preparedStatement.setString(6,  "theshining.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");	
+		          preparedStatement.setString(1,  "The Shining");
+		          preparedStatement.setString(2,  "The story of one family’s stay at a haunted hotel");
+		          preparedStatement.setString(3,  "theshining.pdf");
 		          preparedStatement.executeUpdate();
 
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");		  
-		          preparedStatement.setString(1,  "Andrzej Sapkowski");
-		          preparedStatement.setString(2, "Orbit Books");
-		          preparedStatement.setString(3, "andrzejwitcher@poland.com");
-		          preparedStatement.setString(4,  "The Witcher");
-		          preparedStatement.setString(5,  "The story of a Witcher who was genetically enhanced to fight monsters");
-		          preparedStatement.setString(6,  "thewitcher.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1,  "The Witcher");
+		          preparedStatement.setString(2,  "The story of a Witcher who was genetically enhanced to fight monsters");
+		          preparedStatement.setString(3,  "thewitcher.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");		      
-		          preparedStatement.setString(1,  "Akira Toriyama");
-		          preparedStatement.setString(2, "Weekly Shonen Jump");
-		          preparedStatement.setString(3, "akiratoribot@japan.com");
-		          preparedStatement.setString(4,  "Dragon Ball");
-		          preparedStatement.setString(5,  "A boy with a tail sets off on a journey to find 7 dragon balls that can grant any wish");
-		          preparedStatement.setString(6,  "dragonball.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1,  "Dragon Ball");
+		          preparedStatement.setString(2,  "A boy with a tail sets off on a journey to find 7 dragon balls that can grant any wish");
+		          preparedStatement.setString(3,  "dragonball.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");	
-		          preparedStatement.setString(1, "Robert Kirkman");
-		          preparedStatement.setString(2, "Image Comics");
-		          preparedStatement.setString(3, "robertkirkman@gmail.com");
-		          preparedStatement.setString(4, "The Walking Dead");
-		          preparedStatement.setString(5, "A man wakes up from a coma to find the world he once lived in is now overrun by zombies");
-		          preparedStatement.setString(6, "twd.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "The Walking Dead");
+		          preparedStatement.setString(2, "A man wakes up from a coma to find the world he once lived in is now overrun by zombies");
+		          preparedStatement.setString(3, "twd.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");	
-		          preparedStatement.setString(1, "Tom Clancy");
-		          preparedStatement.setString(2, "Putnam");
-		          preparedStatement.setString(3, "tomclancy@rainbowsix.com");
-		          preparedStatement.setString(4, "Patriot Games");
-		          preparedStatement.setString(5, "A retired CIA analyst is on vacation with his family is attacked by a group of men and he tries to figure out who it was");
-		          preparedStatement.setString(6, "patriotgames.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Patriot Games");
+		          preparedStatement.setString(2, "A retired CIA analyst is on vacation with his family is attacked by a group of men and he tries to figure out who it was");
+		          preparedStatement.setString(3, "patriotgames.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");	
-		          preparedStatement.setString(1, "Suzanne Collins");
-		          preparedStatement.setString(2, "Scholastic");
-		          preparedStatement.setString(3, "suzannec@hotmail.com");
-		          preparedStatement.setString(4, "The Hunger Games");
-		          preparedStatement.setString(5, "In a dystopian world where one girl volunteers to take her sisters place after she was selected to take part in a fight for survival called the Hunger Games");
-		          preparedStatement.setString(6, "thehungergames.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "The Hunger Games");
+		          preparedStatement.setString(2, "In a dystopian world where one girl volunteers to take her sisters place after she was selected to take part in a fight for survival called the Hunger Games");
+		          preparedStatement.setString(3, "thehungergames.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");	
-		          preparedStatement.setString(1, "George R.R. Martin");
-		          preparedStatement.setString(2, "Spectra");
-		          preparedStatement.setString(3, "georgerrmartin@westoros.com");
-		          preparedStatement.setString(4, "A Game of Thrones");
-		          preparedStatement.setString(5, "A brutal fantasy world where the story follows the lives of several members of noble families in their struggle to rule over all else");
-		          preparedStatement.setString(6, "got.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "A Game of Thrones");
+		          preparedStatement.setString(2, "A brutal fantasy world where the story follows the lives of several members of noble families in their struggle to rule over all else");
+		          preparedStatement.setString(3, "got.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");	
-		          preparedStatement.setString(1, "Bruce Campbell");
-		          preparedStatement.setString(2, "St. Martin's Press");
-		          preparedStatement.setString(3, "groovybruce@evildead.com");
-		          preparedStatement.setString(4, "If Chins Could Kill");
-		          preparedStatement.setString(5, "A satire of celebrity memoirs told as a story of a famous actor trying to do research for his role in the movie called ‘Let’s Make Love’");
-		          preparedStatement.setString(6, "ifchinscouldkill.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "If Chins Could Kill");
+		          preparedStatement.setString(2, "A satire of celebrity memoirs told as a story of a famous actor trying to do research for his role in the movie called ‘Let’s Make Love’");
+		          preparedStatement.setString(3, "ifchinscouldkill.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");	
-		          preparedStatement.setString(1, "RZA");
-		          preparedStatement.setString(2, "Riverhead");
-		          preparedStatement.setString(3, "rza@wutang.com");
-		          preparedStatement.setString(4, "The Wu-Tang Manual");
-		          preparedStatement.setString(5, "A guide to the Wu-Tang clan written by none other than RZA himself it contains biographies of each member and details certain things in many of their songs");
-		          preparedStatement.setString(6, "thewutangmanual.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "The Wu-Tang Manual");
+		          preparedStatement.setString(2, "A guide to the Wu-Tang clan written by none other than RZA himself it contains biographies of each member and details certain things in many of their songs");
+		          preparedStatement.setString(3, "thewutangmanual.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");
-		          preparedStatement.setString(1, "Lu");
-		          preparedStatement.setString(2, "Scholastic");
-		          preparedStatement.setString(3, "lu@lutang.com");
-		          preparedStatement.setString(4, "The Life of Lu");
-		          preparedStatement.setString(5, "Biography of Lu, written by Lu, for those who like Lu.");
-		          preparedStatement.setString(6, "lifeoflu.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "The Life of Lu");
+		          preparedStatement.setString(2, "Biography of Lu, written by Lu, for those who like Lu.");
+		          preparedStatement.setString(3, "lifeoflu.pdf");
 		          preparedStatement.executeUpdate();
 		          
-		          preparedStatement = connect.prepareStatement("insert into  papers(authorName, authorAffiliations, authorEmail, title, abstract, PDFname) values (?, ?, ?, ?, ?, ?)");
-		          preparedStatement.setString(1, "Zhang, Lu");
-		          preparedStatement.setString(2, "Riverhead");
-		          preparedStatement.setString(3, "zhang@zhang.com");
-		          preparedStatement.setString(4, "Zhang and Lu");
-		          preparedStatement.setString(5, "A book detailing the magical adventures between two friends");
-		          preparedStatement.setString(6, "zhangandlu.pdf");
+		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Zhang and Lu");
+		          preparedStatement.setString(2, "A book detailing the magical adventures between two friends");
+		          preparedStatement.setString(3, "zhangandlu.pdf");
 		          preparedStatement.executeUpdate();
 		          		       
 		          		  		         		          
@@ -340,6 +322,157 @@ public class InitializeDao {
 		          preparedStatement.setString(1, "Bill");
 		         // preparedStatement.setString(2, "NULL");
 		          preparedStatement.executeUpdate();	//13
+		          
+		          //end pc member initialization
+		          
+		          //start authors initialization
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "J.K. Rowling");
+		          preparedStatement.setString(2, "jkrowling@books.com");
+		          preparedStatement.setString(3, "Scholastic");
+		          preparedStatement.executeUpdate();	//1
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Stephen King");
+		          preparedStatement.setString(2, "stephenking@gmail.com");
+		          preparedStatement.setString(3, "Doubleday");
+		          preparedStatement.executeUpdate();	//2
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Andrzej Sapkowski");
+		          preparedStatement.setString(2, "andrzejwitcher@poland.com");
+		          preparedStatement.setString(3, "Orbit Books");
+		          preparedStatement.executeUpdate();	//3
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Akira Toriyama");
+		          preparedStatement.setString(2, "akiratoribot@japan.com");
+		          preparedStatement.setString(3, "Shonen Jump");
+		          preparedStatement.executeUpdate();	//4
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Robert Kirkman");
+		          preparedStatement.setString(2, "robertkirkman@gmail.com");
+		          preparedStatement.setString(3, "Image Comics");
+		          preparedStatement.executeUpdate();	//5
+
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Tom Clancy");
+		          preparedStatement.setString(2, "tomclancy@rainbowsix.com");
+		          preparedStatement.setString(3, "Putnam");
+		          preparedStatement.executeUpdate();	//6
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Suzanne Collins");
+		          preparedStatement.setString(2, "suzannec@hotmail.com");
+		          preparedStatement.setString(3, "Scholastic");
+		          preparedStatement.executeUpdate();	//7
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "George R.R. Martin");
+		          preparedStatement.setString(2, "georgerrmartin@westoros.com");
+		          preparedStatement.setString(3, "Spectra");
+		          preparedStatement.executeUpdate();	//8
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Bruce Campbell");
+		          preparedStatement.setString(2, "groovybruce@evildead.com");
+		          preparedStatement.setString(3, "St. Martin's Press");
+		          preparedStatement.executeUpdate();	//9
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "RZA");
+		          preparedStatement.setString(2, "rza@wutang.com");
+		          preparedStatement.setString(3, "Riverhead");
+		          preparedStatement.executeUpdate();	//10
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Lu");
+		          preparedStatement.setString(2, "lu@lutang.com");
+		          preparedStatement.setString(3, "Scholastic");
+		          preparedStatement.executeUpdate();	//11
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Zhang");
+		          preparedStatement.setString(2, "zhang@books.com");
+		          preparedStatement.setString(3, "Riverhead");
+		          preparedStatement.executeUpdate();	//12
+		          
+		          preparedStatement = connect.prepareStatement("insert into authors(authorName, authorEmail, authorAffiliation) values (?, ?, ?)");
+		          preparedStatement.setString(1, "GZA");
+		          preparedStatement.setString(2, "gza@wutang.com");
+		          preparedStatement.setString(3, "Riverhead");
+		          preparedStatement.executeUpdate();	//13
+		          
+		          //end authors initialization
+		          
+		          //start authorList initialization
+		          
+		          preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "J.K. Rowling");
+			      preparedStatement.setString(2, "1");
+			      preparedStatement.executeUpdate();	//1
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Stephen King");
+			      preparedStatement.setString(2, "2");
+			      preparedStatement.executeUpdate();	//2
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Andrzej Sapkowski");
+			      preparedStatement.setString(2, "3");
+			      preparedStatement.executeUpdate();	//3
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Akira Toriyama");
+			      preparedStatement.setString(2, "4");
+			      preparedStatement.executeUpdate();	//4
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Robert Kirkman");
+			      preparedStatement.setString(2, "5");
+			      preparedStatement.executeUpdate();	//5
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Tom Clancy");
+			      preparedStatement.setString(2, "6");
+			      preparedStatement.executeUpdate();	//6
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Suzanne Collins");
+			      preparedStatement.setString(2, "7");
+			      preparedStatement.executeUpdate();	//7
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "George R.R. Martin");
+			      preparedStatement.setString(2, "8");
+			      preparedStatement.executeUpdate();	//8
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Bruce Campbell");
+			      preparedStatement.setString(2, "9");
+			      preparedStatement.executeUpdate();	//9
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, secondAuthorName, firstAuthorID, secondAuthorID) values (?, ?, ?, ?)");
+			      preparedStatement.setString(1, "RZA");
+			      preparedStatement.setString(2, "GZA");
+			      preparedStatement.setString(3, "10");
+			      preparedStatement.setString(4, "13");	//10
+			      preparedStatement.executeUpdate();
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, firstAuthorID) values (?, ?)");
+			      preparedStatement.setString(1, "Lu");
+			      preparedStatement.setString(2, "11");
+			      preparedStatement.executeUpdate();	//11
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, secondAuthorName, firstAuthorID, secondAuthorID) values (?, ?, ?, ?)");
+			      preparedStatement.setString(1, "Lu");
+			      preparedStatement.setString(2, "Zhang");
+			      preparedStatement.setString(3, "11");
+			      preparedStatement.setString(4, "12");
+			      preparedStatement.executeUpdate();	//12
+			      
+			      //end authorList initialization
 		          
 		          System.out.println("Database Initialized");
 		          
