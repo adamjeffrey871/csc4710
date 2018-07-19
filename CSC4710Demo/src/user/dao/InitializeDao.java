@@ -78,73 +78,79 @@ public class InitializeDao {
 		          preparedStatement.setString(1,  "Harry Potter 1");
 		          preparedStatement.setString(2,  "Book about Harry Potter in the world of wizards");
 		          preparedStatement.setString(3,  "harrypotter1.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//1
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");	
 		          preparedStatement.setString(1,  "The Shining");
 		          preparedStatement.setString(2,  "The story of one family’s stay at a haunted hotel");
 		          preparedStatement.setString(3,  "theshining.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//2
 
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1,  "The Witcher");
 		          preparedStatement.setString(2,  "The story of a Witcher who was genetically enhanced to fight monsters");
 		          preparedStatement.setString(3,  "thewitcher.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//3
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1,  "Dragon Ball");
 		          preparedStatement.setString(2,  "A boy with a tail sets off on a journey to find 7 dragon balls that can grant any wish");
 		          preparedStatement.setString(3,  "dragonball.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//4
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "The Walking Dead");
 		          preparedStatement.setString(2, "A man wakes up from a coma to find the world he once lived in is now overrun by zombies");
 		          preparedStatement.setString(3, "twd.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//5
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "Patriot Games");
 		          preparedStatement.setString(2, "A retired CIA analyst is on vacation with his family is attacked by a group of men and he tries to figure out who it was");
 		          preparedStatement.setString(3, "patriotgames.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//6
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "The Hunger Games");
 		          preparedStatement.setString(2, "In a dystopian world where one girl volunteers to take her sisters place after she was selected to take part in a fight for survival called the Hunger Games");
 		          preparedStatement.setString(3, "thehungergames.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//7
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "A Game of Thrones");
 		          preparedStatement.setString(2, "A brutal fantasy world where the story follows the lives of several members of noble families in their struggle to rule over all else");
 		          preparedStatement.setString(3, "got.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//8
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "If Chins Could Kill");
 		          preparedStatement.setString(2, "A satire of celebrity memoirs told as a story of a famous actor trying to do research for his role in the movie called ‘Let’s Make Love’");
 		          preparedStatement.setString(3, "ifchinscouldkill.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//9	
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "The Wu-Tang Manual");
 		          preparedStatement.setString(2, "A guide to the Wu-Tang clan written by none other than RZA himself it contains biographies of each member and details certain things in many of their songs");
 		          preparedStatement.setString(3, "thewutangmanual.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//10
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "The Life of Lu");
 		          preparedStatement.setString(2, "Biography of Lu, written by Lu, for those who like Lu.");
 		          preparedStatement.setString(3, "lifeoflu.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//11
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname) values (?, ?, ?)");
 		          preparedStatement.setString(1, "Zhang and Lu");
-		          preparedStatement.setString(2, "A book detailing the magical adventures between two friends");
+		          preparedStatement.setString(2, "A book detailing the magical adventures between two friends from Lu's perspective");
 		          preparedStatement.setString(3, "zhangandlu.pdf");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//12
+		          
+		          preparedStatement = connect.prepareStatement("insert into papers(title, abstract, PDFname) values (?, ?, ?)");
+		          preparedStatement.setString(1, "Lu and Zhang");
+		          preparedStatement.setString(2, "A book detailing the magical adventures between two friends from Zhang's perspective");
+		          preparedStatement.setString(3, "luandzhang.pdf");
+		          preparedStatement.executeUpdate();	//13
 		          		       
 		          		  		         		          
 		    //end paper initialization
@@ -266,6 +272,24 @@ public class InitializeDao {
 		          preparedStatement.setString(5,  "12");
 		          preparedStatement.setString(6,  "12");
 		          preparedStatement.executeUpdate();	//13
+		          
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID, paperID) values (?, ?, ?, ?, ?, ?)");	
+		          preparedStatement.setString(1, "14");
+		          preparedStatement.setString(2, "Not as good from a different perspective");
+		          preparedStatement.setString(3, "reject");
+		          preparedStatement.setString(4, "2018-05-29");
+		          preparedStatement.setString(5,  "12");
+		          preparedStatement.setString(6,  "13");
+		          preparedStatement.executeUpdate();
+		          
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID, paperID) values (?, ?, ?, ?, ?, ?)");	
+		          preparedStatement.setString(1, "15");
+		          preparedStatement.setString(2, "Lu misses again");
+		          preparedStatement.setString(3, "reject");
+		          preparedStatement.setString(4, "2018-03-25");
+		          preparedStatement.setString(5,  "5");
+		          preparedStatement.setString(6,  "11");
+		          preparedStatement.executeUpdate();
 		          //end review initialization
 		          
 		          //start PC member initialization
@@ -471,6 +495,13 @@ public class InitializeDao {
 			      preparedStatement.setString(3, "11");
 			      preparedStatement.setString(4, "12");
 			      preparedStatement.executeUpdate();	//12
+			      
+			      preparedStatement = connect.prepareStatement("insert into authorList(firstAuthorName, secondAuthorName, firstAuthorID, secondAuthorID) values (?, ?, ?, ?)");
+			      preparedStatement.setString(1, "Zhang");
+			      preparedStatement.setString(2, "Lu");
+			      preparedStatement.setString(3, "12");
+			      preparedStatement.setString(4, "11");
+			      preparedStatement.executeUpdate();	//13
 			      
 			      //end authorList initialization
 		          

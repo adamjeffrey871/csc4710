@@ -24,6 +24,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>ListFirstAuthorServlet</display-name>
+    <servlet-name>ListFirstAuthorServlet</servlet-name>
+    <servlet-class>user.web.servlet.ListFirstAuthorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListFirstAuthorServlet</servlet-name>
+    <url-pattern>/ListFirstAuthorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>InsertMemberServlet</display-name>
     <servlet-name>InsertMemberServlet</servlet-name>
     <servlet-class>user.web.servlet.InsertMemberServlet</servlet-class>
