@@ -34,6 +34,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>mostReviewsServlet</display-name>
+    <servlet-name>mostReviewsServlet</servlet-name>
+    <servlet-class>user.web.servlet.mostReviewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mostReviewsServlet</servlet-name>
+    <url-pattern>/mostReviewsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>ListTwoAuthorsServlet</display-name>
     <servlet-name>ListTwoAuthorsServlet</servlet-name>
     <servlet-class>user.web.servlet.ListTwoAuthorsServlet</servlet-class>

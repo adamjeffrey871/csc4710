@@ -32,7 +32,7 @@ public class User {
 	String reviewID = null;
 	String memberName = null;
 	private String authorID = null;
-	private String numReviews;
+	private String numReviews = "0";
 	
 
 	
