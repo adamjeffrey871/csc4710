@@ -46,6 +46,9 @@
 	PDF File：<input type="text" name="pdfName" value="${form.pdfName }"/>
 	<span style="color: red; font-weight: 900">${errors.pdfName }</span>
 	<br/>
+	Author ID：<input type="text" name="authorID" value="${form.authorID }"/>
+	<span style="color: red; font-weight: 900">${errors.authorID }</span>
+	<br/>
 	<input type="submit" value="Insert"/>
 </form>
   </body>

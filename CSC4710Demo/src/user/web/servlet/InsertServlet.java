@@ -38,7 +38,7 @@ public class InsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile;
+		String authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, authorID;
 		
 		
 		
@@ -59,6 +59,7 @@ public class InsertServlet extends HttpServlet {
 		form.setTitle(info.get(4));
 		form.setAbstract(info.get(5));
 		form.setPDF(info.get(6));
+		form.setAuthorID(info.get(7));
 		
 		authorName = form.getAuthorName();
 		authorAffiliation = form.getAuthorAffiliation();
@@ -66,10 +67,11 @@ public class InsertServlet extends HttpServlet {
 		title = form.getTitle();
 		paperAbstract = form.getAbstract();
 		PDFfile = form.getPDF();
+		authorID = form.getAuthorID();
 		
 		//insert code here
 		InsertDao newObj = new InsertDao();
-		newObj.insert(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile);
+		newObj.insert(authorName, authorAffiliation, authorEmail, title, paperAbstract, PDFfile, authorID);
 		response.sendRedirect( request.getContextPath() + "/jsps/papersAfterBody.jsp"); 
 		
 	}

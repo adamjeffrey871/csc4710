@@ -12,6 +12,36 @@
     <servlet-name>InitializeServlet</servlet-name>
     <url-pattern>/InitializeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MattAndJohnServlet</display-name>
+    <servlet-name>MattAndJohnServlet</servlet-name>
+    <servlet-class>user.web.servlet.MattAndJohnServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MattAndJohnServlet</servlet-name>
+    <url-pattern>/MattAndJohnServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>noReviewsServlet</display-name>
+    <servlet-name>noReviewsServlet</servlet-name>
+    <servlet-class>user.web.servlet.noReviewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>noReviewsServlet</servlet-name>
+    <url-pattern>/noReviewsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListTwoAuthorsServlet</display-name>
+    <servlet-name>ListTwoAuthorsServlet</servlet-name>
+    <servlet-class>user.web.servlet.ListTwoAuthorsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListTwoAuthorsServlet</servlet-name>
+    <url-pattern>/ListTwoAuthorsServlet</url-pattern>
+  </servlet-mapping>
    <servlet>
     <description></description>
     <display-name>ListSingleAuthorServlet</display-name>

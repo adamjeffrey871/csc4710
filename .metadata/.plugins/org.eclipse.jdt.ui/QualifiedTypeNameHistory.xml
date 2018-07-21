@@ -13,4 +13,11 @@
 <fullyQualifiedTypeName name="user.dao.DeleteMemberDao"/>
 <fullyQualifiedTypeName name="user.dao.UpdateMemberDao"/>
 <fullyQualifiedTypeName name="user.dao.ListSingleAuthorDao"/>
+<fullyQualifiedTypeName name="user.domain.Papers"/>
+<fullyQualifiedTypeName name="user.dao.ListTwoAuthorsDao"/>
+<fullyQualifiedTypeName name="user.dao.MostReviewsDao"/>
+<fullyQualifiedTypeName name="user.domain.Reviewers"/>
+<fullyQualifiedTypeName name="user.dao.NoReviewsDao"/>
+<fullyQualifiedTypeName name="user.dao.MattAndJohnDao"/>
+<fullyQualifiedTypeName name="user.domain.MattandJohn"/>
 </qualifiedTypeNameHistroy>

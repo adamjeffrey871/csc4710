@@ -31,6 +31,8 @@ public class User {
 	String memberID = null;
 	String reviewID = null;
 	String memberName = null;
+	private String authorID = null;
+	private String numReviews;
 	
 
 	
@@ -284,5 +286,21 @@ public class User {
 	public String toString() {
 		return "User [ username=" + username + ", password="
 				+ password + ", email=" + email +"]";
+	}
+
+	public String getAuthorID() {
+		return authorID;
+	}
+
+	public void setAuthorID(String authorID) {
+		this.authorID = authorID;
+	}
+
+	public String getNumReviews() {
+		return numReviews;
+	}
+
+	public void setNumReviews(String numReviews) {
+		this.numReviews = numReviews;
 	}
 }

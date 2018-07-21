@@ -49,6 +49,9 @@
 	Paper ID:<input type="text" name="paperID" value="${form.paperID }"/>
 	<span style="color: red; font-weight: 900">${errors.paperID }</span>
 	<br/>
+	Author ID:<input type="text" name="authorID" value="${form.authorID }"/>
+	<span style="color: red; font-weight: 900">${errors.authorID }</span>
+	<br/>
 	<input type="submit" value="Update"/>
 </form>
   </body>
