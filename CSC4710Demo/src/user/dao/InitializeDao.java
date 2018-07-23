@@ -171,7 +171,7 @@ public class InitializeDao {
 		          preparedStatement.setString(2, "A book detailing the magical adventures between two friends from Lu's perspective");
 		          preparedStatement.setString(3, "zhangandlu.pdf");
 		          preparedStatement.setString(4, "11");
-		          preparedStatement.setString(5, "Lu");
+		          preparedStatement.setString(5, "Multiple");
 		          preparedStatement.executeUpdate();	//12
 		          
 		          preparedStatement = connect.prepareStatement("insert into  papers(title, abstract, PDFname, authorID, authorName) values (?, ?, ?, ?, ?)");
@@ -179,7 +179,7 @@ public class InitializeDao {
 		          preparedStatement.setString(2, "A book detailing the magical adventures between two friends from Zhang's perspective");
 		          preparedStatement.setString(3, "luandzhang.pdf");
 		          preparedStatement.setString(4, "12");
-		          preparedStatement.setString(5, "Zhang");
+		          preparedStatement.setString(5, "Multiple");
 		          preparedStatement.executeUpdate();	//13
 		          		       
 		          		  		         		          
@@ -310,7 +310,7 @@ public class InitializeDao {
 		          preparedStatement.setString(4, "2018-05-29");
 		          preparedStatement.setString(5,  "12");
 		          preparedStatement.setString(6,  "13");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//14
 		          
 		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID, paperID) values (?, ?, ?, ?, ?, ?)");	
 		          preparedStatement.setString(1, "15");
@@ -319,7 +319,25 @@ public class InitializeDao {
 		          preparedStatement.setString(4, "2018-03-25");
 		          preparedStatement.setString(5,  "5");
 		          preparedStatement.setString(6,  "11");
-		          preparedStatement.executeUpdate();
+		          preparedStatement.executeUpdate();	//15
+		          
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID, paperID) values (?, ?, ?, ?, ?, ?)");	
+		          preparedStatement.setString(1, "16");
+		          preparedStatement.setString(2, "It was good");
+		          preparedStatement.setString(3, "accept");
+		          preparedStatement.setString(4, "2018-03-25");
+		          preparedStatement.setString(5,  "3");
+		          preparedStatement.setString(6,  "6");
+		          preparedStatement.executeUpdate();	//16
+		          
+		          preparedStatement = connect.prepareStatement("insert into  reviews(reportID, description, finalRecommendation, subDate, memberID, paperID) values (?, ?, ?, ?, ?, ?)");	
+		          preparedStatement.setString(1, "17");
+		          preparedStatement.setString(2, "Good read to sit back and relax to");
+		          preparedStatement.setString(3, "accept");
+		          preparedStatement.setString(4, "2018-03-25");
+		          preparedStatement.setString(5,  "2");
+		          preparedStatement.setString(6,  "2");
+		          preparedStatement.executeUpdate();	//17
 		          //end review initialization
 		          
 		          //start PC member initialization
@@ -546,6 +564,16 @@ public class InitializeDao {
 			      preparedStatement.executeUpdate();	//13
 			      
 			      //end authorList initialization
+			      
+			      //creating the accepted papers view
+			      statement.executeUpdate("DROP VIEW IF EXISTS AcceptedPapers");
+			      String sqlstmt6 = "CREATE VIEW AcceptedPapers " +
+			    		  		"AS SELECT paperID, finalRecommendation " +
+			    		  		"FROM reviews " +
+			    		  		"WHERE finalRecommendation='accept' " +
+			    		  		"GROUP BY paperID " +
+			    		  		"HAVING COUNT(*)>1;";
+			      statement.executeUpdate(sqlstmt6);
 		          
 		          System.out.println("Database Initialized");
 		          

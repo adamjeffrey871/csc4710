@@ -30,16 +30,5 @@
 	<input type="submit" value="Initialize Database"/>
 	
 </form>
-<h3>Add Reviewers</h3>
-<form action="<c:url value='/AssignReviewersServlet'/>" method="post">
-	Paper ID     :<input type="text" name="paperID" value="${form.paperID }"/>
-	<span style="color: red; font-weight: 900">${errors.paperID }</span>
-	<br/>
-	Reviewer Name：<input type="text" name="reviewerName" value="${form.reviewerName }"/>
-	<span style="color: red; font-weight: 900">${errors.reviewerName }</span>
-	<br/>
-	<input type="submit" value="Assign Reviewer"/>
-	
-</form>
   </body>
 </html>

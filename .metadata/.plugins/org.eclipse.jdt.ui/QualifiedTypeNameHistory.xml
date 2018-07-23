@@ -20,4 +20,5 @@
 <fullyQualifiedTypeName name="user.dao.NoReviewsDao"/>
 <fullyQualifiedTypeName name="user.dao.MattAndJohnDao"/>
 <fullyQualifiedTypeName name="user.domain.MattandJohn"/>
+<fullyQualifiedTypeName name="user.dao.ListFirstAuthorDao"/>
 </qualifiedTypeNameHistroy>

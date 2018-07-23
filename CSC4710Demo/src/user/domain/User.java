@@ -14,25 +14,27 @@ public class User {
 	private String username;
 	private String password; 
 	private String email;
-	String authorName = null;
-	String authorAffiliation = null;
-	String authorEmail = null;
-	String title = null;
-	String paperAbstract = null;
-	String PDFfile = null;
-	String reviewerName = null;
-	String reviewerID = null;
-	String deletePaperID = null;
-	String paperID = null;
-	String reportID = null;
-	String description = null;
-	String finalRecommendation = null;
-	String subDate = null;
-	String memberID = null;
-	String reviewID = null;
-	String memberName = null;
+	private String authorName = null;
+	private String authorAffiliation = null;
+	private String authorEmail = null;
+	private String title = null;
+	private String paperAbstract = null;
+	private String PDFfile = null;
+	private String reviewerName = null;
+	private String deletePaperID = null;
+	private String paperID = null;
+	private String reportID = null;
+	private String description = null;
+	private String finalRecommendation = null;
+	private String subDate = null;
+	private String memberID = null;
+	private String reviewID = null;
+	private String memberName = null;
 	private String authorID = null;
 	private String numReviews = "0";
+	private String firstReviewer = null;
+	private String secondReviewer = null;
+	private String thirdReviewer = null;
 	
 
 	
@@ -293,7 +295,10 @@ public class User {
 	}
 
 	public void setAuthorID(String authorID) {
-		this.authorID = authorID;
+		if (!authorID.isEmpty())
+			this.authorID = authorID;
+		else
+			System.out.println("Author ID skipped, nothing entered");
 	}
 
 	public String getNumReviews() {
@@ -301,6 +306,33 @@ public class User {
 	}
 
 	public void setNumReviews(String numReviews) {
-		this.numReviews = numReviews;
+		if(!numReviews.isEmpty())
+			this.numReviews = numReviews;
+		else
+			System.out.println("Number of reviews skipped, nothing entered.");
+	}
+
+	public String getFirstReviewer() {
+		return firstReviewer;
+	}
+
+	public void setFirstReviewer(String firstReviewer) {
+		this.firstReviewer = firstReviewer;
+	}
+
+	public String getSecondReviewer() {
+		return secondReviewer;
+	}
+
+	public void setSecondReviewer(String secondReviewer) {
+		this.secondReviewer = secondReviewer;
+	}
+
+	public String getThirdReviewer() {
+		return thirdReviewer;
+	}
+
+	public void setThirdReviewer(String thirdReviewer) {
+		this.thirdReviewer = thirdReviewer;
 	}
 }

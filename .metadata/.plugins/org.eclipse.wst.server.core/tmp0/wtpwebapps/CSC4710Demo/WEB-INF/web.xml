@@ -14,6 +14,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>Assign3ReviewersServlet</display-name>
+    <servlet-name>Assign3ReviewersServlet</servlet-name>
+    <servlet-class>user.web.servlet.Assign3ReviewersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Assign3ReviewersServlet</servlet-name>
+    <url-pattern>/Assign3ReviewersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>MattAndJohnServlet</display-name>
     <servlet-name>MattAndJohnServlet</servlet-name>
     <servlet-class>user.web.servlet.MattAndJohnServlet</servlet-class>
@@ -31,6 +41,16 @@
   <servlet-mapping>
     <servlet-name>noReviewsServlet</servlet-name>
     <url-pattern>/noReviewsServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>AcceptedPapersServlet</display-name>
+    <servlet-name>AcceptedPapersServlet</servlet-name>
+    <servlet-class>user.web.servlet.AcceptedPapersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AcceptedPapersServlet</servlet-name>
+    <url-pattern>/AcceptedPapersServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -161,16 +181,6 @@
   <servlet-mapping>
     <servlet-name>InsertServlet</servlet-name>
     <url-pattern>/InsertServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AssignReviewersServlet</display-name>
-    <servlet-name>AssignReviewersServlet</servlet-name>
-    <servlet-class>user.web.servlet.AssignReviewersServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AssignReviewersServlet</servlet-name>
-    <url-pattern>/AssignReviewersServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
