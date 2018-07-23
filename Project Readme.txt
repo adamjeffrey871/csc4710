@@ -1,3 +1,6 @@
+Developer: Adam Jeffrey
+Email: adamjeffrey871@gmail.com
+Github: https://github.com/adamjeffrey871/csc4710project
 Everything in this project was done all by me with no assistence from anyone.
 
 I'm gonna run through some basic instructions that should be done upon first setup as well as some things to know.

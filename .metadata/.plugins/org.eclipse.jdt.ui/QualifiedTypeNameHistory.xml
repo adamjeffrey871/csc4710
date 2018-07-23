@@ -21,4 +21,6 @@
 <fullyQualifiedTypeName name="user.dao.MattAndJohnDao"/>
 <fullyQualifiedTypeName name="user.domain.MattandJohn"/>
 <fullyQualifiedTypeName name="user.dao.ListFirstAuthorDao"/>
+<fullyQualifiedTypeName name="user.dao.Assign3ReviewersDao"/>
+<fullyQualifiedTypeName name="user.dao.AcceptedPapersDao"/>
 </qualifiedTypeNameHistroy>

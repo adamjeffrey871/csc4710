@@ -12,12 +12,14 @@
 	<table border="1" width="70%" align="center">
 	<tr>
 		<th>Member ID</th>
+		<th>Member Name</th>
 		<th>Number of Reviews</th>
 		
 	</tr>
 <c:forEach items="${ReviewerList}" var="user">
 	<tr>
 		<td>${user.memberID }</td>
+		<td>${user.memberName }</td>
 		<td>${user.numReviews }</td>
 	</tr>
 </c:forEach>
