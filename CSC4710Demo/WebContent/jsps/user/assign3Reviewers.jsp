@@ -28,13 +28,13 @@
 <p style="color: red; font-weight: 900"> ${msg}</p>
 <form action="<c:url value='/Assign3ReviewersServlet'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
-	First Reviewer ID:<input type="text" name="firstReviewer" value="${form.firstReviewer }"/>
+	First Member ID:<input type="text" name="firstReviewer" value="${form.firstReviewer }"/>
 	<span style="color: red; font-weight: 900">${errors.firstReviewer }</span>
 	<br/>
-	Second Reviewer ID：<input type="text" name="secondReviewer" value="${form.secondReviewer }"/>
+	Second Member ID：<input type="text" name="secondReviewer" value="${form.secondReviewer }"/>
 	<span style="color: red; font-weight: 900">${errors.secondReviewer }</span>
 	<br/>
-	Third Reviewer ID：<input type="text" name="thirdReviewer" value="${form.thirdReviewer }"/>
+	Third Member ID：<input type="text" name="thirdReviewer" value="${form.thirdReviewer }"/>
 	<span style="color: red; font-weight: 900">${errors.memberID }</span>
 	<br/>
 	Paper ID：<input type="text" name="paperID" value="${form.paperID }"/>
